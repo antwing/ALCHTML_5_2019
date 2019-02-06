@@ -20,17 +20,17 @@ funtion Game(){
         sword: 0,
         lamp: 0,
         rope: 0,
-        slingshot: 0,
-        rocks: 0,
-    }
-    var fight; 
-    var 
+        loot: 0,
+    };
+    var fight{
+        if (sword == 1){
+            
+        };
+        else{
+            
+        };
+    };
         
-        
-        
-        
-        
-    }
     document.write("the unforuntae tale of ");
     var playerName = prompt ("What is your name?");
     alert("Welcome to the land of lollypop" + playerName);
@@ -66,29 +66,41 @@ funtion Game(){
 
 //next part 
     Funtion Swamp() {
-        var swampEnv = prompt ("you get out and you are now in a swamp. There is a path to north, a murky pond to the south, and the prison is to the south. \n follow path \n swim").toLocaleLowerCase();
+        var swampEnv = prompt ("you got out and you are now in a swamp. There is a path to north, a murky pond to the east, and the prison is to the south. \n follow path north \n swim").toLocaleLowerCase();
         
-        if(swampEnv == "follow" ||swampEnv == "follow path"){
+        //follow path
+        if(swampEnv == "follow" ||swampEnv == "follow path"|| swampEnv == "north"){
             var hut = true;
             var swampPath = prompt ("You follow the path to the north. along the way you notice a hut with a light buring inside. \n enter hut \n burn down hut \n continue along path").toLocaleLowerCase;
             
-            //hut burned
-            if(swampPath = "burn down hut"){
-                alert("the hut is quickly engulfed in flames and everything inside is turned to cinder and smoke. nothing is left").toLowerCase();
-                // no more hut
-               var hut = false;
+            switch(swampPath){
+
+                    //burn hut
+                case "burn"||"burn down hut":
+                     
+                    alert("the hut is quickly engulfed in flames. You hear a deathening shreak  and a smell of buring flesh begins to eminate from inside of the hut. You glory at the flames as they lick the walls of the hut and everything is quickly turned to cinder and smoke.").toLowerCase();
+                      // no more hut
+                    var hut = false;
+                    break;
+                    
+                    //go in hut
+                case "enter" && hut = true):
                 
+                    var hutSpace = prompt ("you go inside the hut and you find an old hag who is quietly mumbling to herself over a book. You notice a sword to the left \n talk with her \n take sword \n leave hut").toLocaleLowerCase();
+                    //take the sword
+                    if(hutSpace == "take sword" || hutSpace == "take"){
+                    
+                        inventory.sword ++;
+                  
+                        var hagAttack = prompt ("the hag notices you take her sword and runs at you with a ladle \n fight \n run").toLocaleLowerCase();
+                    };
+                   break;
+                    //follow path
+                case "continue" || "path" || "continue along path":
+                    alert("you decided to just leave the hut and continue on the path. Cool");
+                    var road
+                    break;
             }
             //inside the hut
-            elseif (swampPath =="enter" && hut = true){
-                var hutSpace = prompt ("you go inside the hut and you find an old hag who is quietly mumbling to herself over a book. You notice a sword to the left \n talk with her \n take sword \n leave hut").toLocaleLowerCase();
-                //take the sword
-                if(hutSpace == "take sword" || hutSpace == "take"){
-                    inventory.sword ++;
-                    var hagAttack = prompt ("the hag notices you take her sword and runs at you with a ladle \n fight \n run").toLocaleLowerCase();
-                };
-            }
-        }
-        
     }
-};
+}
