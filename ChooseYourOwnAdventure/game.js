@@ -30,9 +30,14 @@ funtion Game(){
             
         };
     };
+    var wizName = ["jimmy, dolf, brian, theo"];
+    
+    alert("legend of " +wizName[Math.floor(Math.random(0,4)] + "!");
         
     document.write("the unforuntae tale of ");
+                                
     var playerName = prompt ("What is your name?");
+                                
     alert("Welcome to the land of lollypop" + playerName);
     
     //beginning of game
@@ -84,7 +89,7 @@ funtion Game(){
                     break;
                     
                     //go in hut
-                case "enter" && hut = true):
+                case "enter" && hut = true:
                 
                     var hutSpace = prompt ("you go inside the hut and you find an old hag who is quietly mumbling to herself over a book. You notice a sword to the left \n talk with her \n take sword \n leave hut").toLocaleLowerCase();
                     //take the sword
@@ -93,6 +98,23 @@ funtion Game(){
                         inventory.sword ++;
                   
                         var hagAttack = prompt ("the hag notices you take her sword and runs at you with a ladle \n fight \n run").toLocaleLowerCase();
+                                if (hagAttack = "run")
+                                {
+                                    alert (" the Hag hits you before you can really run away. I'm sorry but the hag doesn't take lightly people taking her stuff so you've been turned into a newt and put into a jar");
+                                // retry
+                                    var hutRetry = prompt ("would you like to try again? \n yes").toLowerCase();
+                                
+                                    if (hutRetry == "yes"|| hutRetry == "y"){
+                                        Swamp();
+                                    }
+                                
+                                    else{
+                                        EndGame();
+                                
+                                    }
+                                
+                              
+                                };
                     };
                    break;
                     //follow path
