@@ -15,7 +15,7 @@ Game();
 
 
 funtion Game(){
-    
+    const woops = "I didnt understand. would you repeat?";
     var  inventory = {
         sword: 0,
         lamp: 0,
@@ -30,6 +30,7 @@ funtion Game(){
             
         };
     };
+    
     var wizName = ["jimmy, dolf, brian, theo"];
     
     alert("legend of " +wizName[Math.floor(Math.random(0,4)] + "!");
@@ -122,6 +123,14 @@ funtion Game(){
                     alert("you decided to just leave the hut and continue on the path. Cool");
                     var road
                     break;
+                                
+                default:
+                                //miss type so retry
+                            alert ( woops ) ;    
+                            
+                    break;
+                               
+                                
             }
             //inside the hut
     }
