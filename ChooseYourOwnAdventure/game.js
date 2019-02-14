@@ -14,22 +14,22 @@
 Game();
 
 
-funtion Game(){
-    const woops = "I didnt understand. would you repeat?";
-    var  inventory = {
+function Game(){
+    var woops = ("I didnt understand. would you repeat?");
+    var inventory = {
         sword: 0,
         lamp: 0,
         rope: 0,
         loot: 0,
-    };
+    }
     var fight{
-        if (sword == 1){
+        if (sword === 1){
             
-        };
+        }
         else{
             
-        };
-    };
+        }
+    }
     
     var wizName = ["jimmy, dolf, brian, theo"];
     
@@ -42,36 +42,52 @@ funtion Game(){
     alert("Welcome to the land of lollypop" + playerName);
     
     //beginning of game
-    Function Prison(){
+    function Prison(){
         var prison = prompt("You wake up... Your body aches and your head is pounding. You try to get up, but it fails. It looks like you're in a prison, but why? \n -look around \n - go back to sleep ").toLowerCase();
         
-        if(prison == "look around" || prison == "look"){
+        if( prison === "look around" || prison === "look"){
             var prisonLook = prompt("The Prison is small, dirty, and damp. A rat curries into a hole in the corner. There is a barred window to the back. a straw bed to the right. The cell bars and locked door to the front. \n move bed \n pick lock").toLocaleLowerCase();
             //move bed
+                                if prisonLook === "move" || prisonLook === "move bed"{
+                                    alert ("after a small a few moments of pushing the bed moves and there apears to be a tunnel");
+                                    
+                                }
                 //tunnels
             //warn player of 50% chance of success
             //pick lock
                 //fight gaurd
                     //50% chance freedom
-        };
+        }
         
         //end the game
-        else if (prison == "go back to sleep"||prison == "sleep"){
+        else if ( prison === "go back to sleep" || prison === "sleep"){
             var sleep = prompt("so are you done? or would you like to actually try? /n yes /n no").toLocaleLowerCase();
             if (sleep == "yes" || sleep == "y" ){
                 //exit
-            };
+            }
             //restart
             else{
-                console.log("here we goooooooooo!")
-                prison();
-            };
+                console.log("here we goooooooooo!");
+                Prison();
+            }
             
-        };
-    };
+        }
+    }                        //prison tunnels
+                                
+                                function tunnels() {
+                                   var enterTunnel = prompt("would you like to go in? \n yes \n no").toLocaleLowerCase();
+                                if enterTunnel === "yes" || enterTunnel === "y" {
+                                // the tunnel system begins
+                                    var tunnel = prompt ("");
+                                }
+                                else enterTunnel === "no" || enterTunnel === "n" {
+                                 alert (" you slide the bed back");
+                                Prison();
+                                }
+                                }
 
 //next part 
-    Funtion Swamp() {
+    function Swamp() {
         var swampEnv = prompt ("you got out and you are now in a swamp. There is a path to north, a murky pond to the east, and the prison is to the south. \n follow path north \n swim").toLocaleLowerCase();
         
         //follow path
@@ -94,7 +110,7 @@ funtion Game(){
                 
                     var hutSpace = prompt ("you go inside the hut and you find an old hag who is quietly mumbling to herself over a book. You notice a sword to the left \n talk with her \n take sword \n leave hut").toLocaleLowerCase();
                     //take the sword
-                    if(hutSpace == "take sword" || hutSpace == "take"){
+                    if(hutSpace === "take sword" || hutSpace === "take"){
                     
                         inventory.sword ++;
                   
@@ -115,8 +131,8 @@ funtion Game(){
                                     }
                                 
                               
-                                };
-                    };
+                                }
+                    }
                    break;
                     //follow path
                 case "continue" || "path" || "continue along path":
@@ -128,7 +144,8 @@ funtion Game(){
                                 //miss type so retry
                             alert ( woops ) ;    
                             
-                    break;
+                   
+                break;
                                
                                 
             }
