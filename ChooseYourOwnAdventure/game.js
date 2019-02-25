@@ -8,13 +8,9 @@
 
 //document.write("<h1>I can't wait for <em>spring!</em></h1>");
 
- //alert("warning! Will Robinson... Warning!");
+//alert("warning! Will Robinson... Warning!");
 //confirm("Do you like pokemon?");
 //prompt("what type of pokemon do you like?");
-Game();
-
-
-function Game(){
     var woops = alert("I didnt understand. would you repeat?");
     var inventory = {
         sword: 0,
@@ -30,13 +26,19 @@ function Game(){
     var wizName = ["jimmy, dolf, brian, theo"];
     
     alert("legend of " +wizName[ Math.floor( Math.random(0,4) ) ]+ "!");
-        
-    document.write("the unforuntae tale of ");
                                 
     var playerName = prompt ("What is your name?");
+    
+    while (!confirm("Are you sure you want " )+ playerName+ " as your name?"){
+        playerName = prompt("What would you like?")
+    }
                                 
     alert("Welcome to the land of lollypop" + playerName);
     
+Game();
+
+function Game() {
+
     //beginning of game
     function Prison(){
         var prison = prompt("You wake up... Your body aches and your head is pounding. You try to get up, but it fails. It looks like you're in a prison, but why? \n -look around \n - go back to sleep ").toLowerCase();
@@ -168,7 +170,7 @@ function Game(){
             }
             //inside the hut
    
+        
         }
-
     }
 }
