@@ -11,70 +11,81 @@
 //alert("warning! Will Robinson... Warning!");
 //confirm("Do you like pokemon?");
 //prompt("what type of pokemon do you like?");
-    var woops = alert("I didnt understand. would you repeat?");
-    var inventory = {
+
+var woops = alert("I didnt understand. would you repeat?");
+    
+var inventory = {
         sword: 0,
         lamp: 0,
         rope: 0,
-        loot: 0,
+        loot: 0
     }
     
-    var checkLoot = function(){
-        alert ("This is how much you got" + inventory.loot);
-    }
+   
+var checkLoot = function () {
+        
+    alert("This is how much you got" + inventory.loot);
+   
+}
     
-    var wizName = ["jimmy, dolf, brian, theo"];
+  
+var wizName = ["jimmy, dolf, brian, theo"];
     
-    alert("legend of " +wizName[ Math.floor( Math.random(0,4) ) ]+ "!");
+  
+alert("legend of " + wizName[Math.floor(Math.random(0, 4))] + "!");
                                 
-    var playerName = prompt ("What is your name?");
+ 
+var playerName = prompt("What is your name?");
     
-    while (!confirm("Are you sure you want " )+ playerName+ " as your name?"){
-        playerName = prompt("What would you like?")
-    }
+  
+while (!confirm("Are you sure you want ") + playerName + " as your name?") {
+        
+    playerName = prompt("What would you like?");
+    
+}
                                 
-    alert("Welcome to the land of lollypop" + playerName);
+  
+alert("Welcome to the land of lollypop" + playerName);
+function gameEnd() {
+    //end game
+    alert("The game is over. Bye!");
+}
     
-Game();
+
 
 function Game() {
 
     //beginning of game
-    function Prison(){
+    function Prison() {
         var prison = prompt("You wake up... Your body aches and your head is pounding. You try to get up, but it fails. It looks like you're in a prison, but why? \n -look around \n - go back to sleep ").toLowerCase();
         
-        if( prison === "look around" || prison === "look"){
+        if (prison === "look around" || prison === "look") {
             var prisonLook = prompt("The Prison is small, dirty, and damp. A rat curries into a hole in the corner. There is a barred window to the back. a straw bed to the right. The cell bars and locked door to the front. \n move bed \n pick lock").toLocaleLowerCase();
             //move bed
-                                if (prisonLook === "move" || prisonLook === "move bed"){
-                                    alert ("after a small a few moments of pushing the bed moves and there apears to be a tunnel");
-                                tunnels();
-                                    
-                                }
+                                
+            if (prisonLook === "move" || prisonLook === "move bed") {
+                                   
+                alert("after a small a few moments of pushing the bed moves and there apears to be a tunnel");
+                tunnels();
+            }
                 //tunnels
             //warn player of 50% chance of success
             //pick lock
                 //fight gaurd
-                    //50% chance freedom
-        }
-        
-        //end the game
-        else if ( prison === "go back to sleep" || prison === "sleep"){
+                    //50% chance freedom 
+        } else if (prison === "go back to sleep" || prison === "sleep") {
             var sleep = prompt("so are you done? or would you like to actually try? /n yes /n no").toLocaleLowerCase();
-            if (sleep == "yes" || sleep == "y" ){
-                //exit
-            }
-            //restart
-            else{
+            if (sleep === "yes" || sleep === "y") {
+                //game end
+                gameEnd();
+            } else {
                 console.log("here we goooooooooo!");
                 Prison();
             }
             
         }
     }                        //prison tunnels
-                                
-        
-    function tunnels() {
+                                    function tunnels() {
                                  
         var enterTunnel = prompt("would you like to go in? \n yes \n no").toLocaleLowerCase();
                                 
@@ -82,37 +93,41 @@ function Game() {
         if (enterTunnel === "yes" || enterTunnel === "y") {
                                 
             // the tunnel system begins
-                   
-            var tunnel = prompt ("");
-                                       
-        }
-            
-        else ( enterTunnel === "no" || enterTunnel === "n" )
-             {
+            while (i < 5 || tunnel === "r" || tunnel === "restart" ) {
+                
+                 var tunnel = prompt(" It apears to be a maze with tunnels in all directions. Which way do you want to go? \n north \n east \n south \n west \n restart");
+                
+                i++;
+            }
+                                   
+        } else if (enterTunnel === "no" || enterTunnel === "n") {
                                  
-                 alert (" you slide the bed back");
+                 alert(" you slide the bed back");
                                 
                  Prison();                
                
-             }
+             
+        } else {
+            woops();
+        
+        }
     
     }
 
+        
+
 //next part 
-    function Swamp() 
+    function Swamp () 
     {
         var swampEnv = prompt ("you got out and you are now in a swamp. There is a path to north, a murky pond to the east, and the prison is to the south. \n follow path north \n swim").toLocaleLowerCase();
         
         //follow path
-        if(swampEnv == "follow" ||swampEnv == "follow path"|| swampEnv == "north")
+        if(swampEnv === "follow" ||swampEnv === "follow path"|| swampEnv === "north")
         {
             var hut = true;
             var swampPath = prompt ("You follow the path to the north. along the way you notice a hut with a light buring inside. \n enter hut \n burn down hut \n continue along path").toLocaleLowerCase;
             
-            switch(swampPath)
-            {
-
-                    //burn hut
+            switch(swampPath) {     //burn hut
                 case "burn" || "burn down hut":
                      
                     alert("the hut is quickly engulfed in flames. You hear a deathening shreak  and a smell of buring flesh begins to eminate from inside of the hut. You glory at the flames as they lick the walls of the hut and everything is quickly turned to cinder and smoke.");
@@ -133,11 +148,11 @@ function Game() {
                         var hagAttack = prompt ("the hag notices you take her sword and runs at you with a ladle \n fight \n run").toLocaleLowerCase();
                                 if (hagAttack = "run")
                                 {
-                                    alert (" the Hag hits you before you can really run away. I'm sorry but the hag doesn't take lightly people taking her stuff so you've been turned into a newt and put into a jar");
+                                    alert (" the Hag hits you before you can run away. I'm sorry but the hag doesn't take lightly people taking her stuff so you've been turned into a newt and put into a jar");
                                 // retry
                                     var hutRetry = prompt ("would you like to try again? \n yes").toLowerCase();
                                 
-                                    if (hutRetry == "yes"|| hutRetry == "y")
+                                    if (hutRetry === "yes"|| hutRetry === "y")
                                     {
                                         Swamp();
                                     }
@@ -174,3 +189,5 @@ function Game() {
         }
     }
 }
+
+Game();
