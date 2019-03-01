@@ -12,27 +12,25 @@
 //confirm("Do you like pokemon?");
 //prompt("what type of pokemon do you like?");
 
-var woops = alert("I didnt understand. would you repeat?");
-    
+var woops = window.alert("I didnt understand. would you repeat?");
 var inventory = {
         sword: 0,
         lamp: 0,
         rope: 0,
         loot: 0
-    }
+    };
     
    
 var checkLoot = function () {
         
     alert("This is how much you got" + inventory.loot);
    
-}
+};
     
   
 var wizName = ["jimmy, dolf, brian, theo"];
     
-  
-alert("legend of " + wizName[Math.floor(Math.random(0, 4))] + "!");
+  alert("legend of " + wizName[Math.floor(Math.random(0, 4))] + "!");
                                 
  
 var playerName = prompt("What is your name?");
@@ -50,17 +48,42 @@ function gameEnd() {
     //end game
     alert("The game is over. Bye!");
 }
-    
 
 
 function Game() {
+    
+        
+    function tunnels() {
+       
+        var enterTunnel = prompt("would you like to go in? \n yes \n no").toLocaleLowerCase();
+     // the tunnel system begins
+        
+        if (enterTunnel === "yes" || enterTunnel === "y") {
+            var i = 0;        
+            while (i < 5) {
+                var tunnel = prompt("It apears to be a maze with tunnels in all directions. Which way do you want to go? \n north \n east \n south \n west ");
+                i++;
+            }
+                                   
+        } else if (enterTunnel === "no" || enterTunnel === "n") {
+            alert(" you slide the bed back");
+            
+            Prison();
+            
+        } else {
+            woops();
+        
+        }
+    
+    }
 
     //beginning of game
+    
     function Prison() {
         var prison = prompt("You wake up... Your body aches and your head is pounding. You try to get up, but it fails. It looks like you're in a prison, but why? \n -look around \n - go back to sleep ").toLowerCase();
         
         if (prison === "look around" || prison === "look") {
-            var prisonLook = prompt("The Prison is small, dirty, and damp. A rat curries into a hole in the corner. There is a barred window to the back. a straw bed to the right. The cell bars and locked door to the front. \n move bed \n pick lock").toLocaleLowerCase();
+            var prisonLook = prompt("The Prison is small, dirty, and damp. A rat curries into a hole in the corner. There is a barred window to the back. a straw bed to the right. The cell bars and locked door to the front. \n move bed \n pick lock \n check pockets").toLocaleLowerCase();
             //move bed
                                 
             if (prisonLook === "move" || prisonLook === "move bed") {
@@ -79,42 +102,15 @@ function Game() {
                 //game end
                 gameEnd();
             } else {
-                console.log("here we goooooooooo!");
+                alert("here we goooooooooo!");
                 Prison();
             }
             
         }
-    }                        //prison tunnels
-                                    function tunnels() {
-                                 
-        var enterTunnel = prompt("would you like to go in? \n yes \n no").toLocaleLowerCase();
-                                
-               
-        if (enterTunnel === "yes" || enterTunnel === "y") {
-                                
-            // the tunnel system begins
-            while (i < 5 || tunnel === "r" || tunnel === "restart" ) {
-                
-                 var tunnel = prompt(" It apears to be a maze with tunnels in all directions. Which way do you want to go? \n north \n east \n south \n west \n restart");
-                
-                i++;
-            }
-                                   
-        } else if (enterTunnel === "no" || enterTunnel === "n") {
-                                 
-                 alert(" you slide the bed back");
-                                
-                 Prison();                
-               
-             
-        } else {
-            woops();
-        
+        else if (prisonLook === "check" || prisonLook === "check pockets"){
+            checkLoot();
         }
-    
     }
-
-        
 
 //next part 
     function Swamp () 
@@ -146,7 +142,7 @@ function Game() {
                         inventory.sword ++;
                   
                         var hagAttack = prompt ("the hag notices you take her sword and runs at you with a ladle \n fight \n run").toLocaleLowerCase();
-                                if (hagAttack = "run")
+                                if (hagAttack === "run")
                                 {
                                     alert (" the Hag hits you before you can run away. I'm sorry but the hag doesn't take lightly people taking her stuff so you've been turned into a newt and put into a jar");
                                 // retry
@@ -159,7 +155,7 @@ function Game() {
                                 
                                     else
                                     {
-                                        EndGame();
+                                        gameEnd();
                                 
                                     }
                                 
@@ -171,14 +167,41 @@ function Game() {
                     //follow path
                 case "continue" || "path" || "continue along path":
                     alert("you decided to just leave the hut and continue on the path. Cool");
-                    var road = prompt("the path goes on for a bit but now there is a split \n ").toLocaleLowerCase();
+                    var road = prompt("the path goes on for a bit but now there is a split \n east \n west").toLocaleLowerCase();
+                    if (road === "west"){
+                        alert("As you head to the west you spot a castle.")
+                    var castle = prompt("You approach the castle. \n go in \n go east").toLocaleLowerCase();
+                    } else if (road === "east") {
+                        alert("you travel east for a distance the path ends as you come up to a well.")
+                        var well = prompt("what do you want to do?\n get water \n look down \n go in \n head west \n make a wish").toLocaleLowerCase();
+                        switch(well){
+                            case "get water" || "water":
+                                alert("you lower the bucket and pull it out. You take a long swig of the water of you just collected");
+                                // funtion?
+                                well;
+                            break;
+                            case "look down" || "look":
+                                alert("you look down the deep well that seems to never end.");
+                            
+                                break;
+                            case "go" || "go in":
+                                alert("you grab the rope attached to the")
+                                break;
+                            case "west" || "head west":
+                            
+                                break;
+                            case "make a wish" || "wish":
+                                break;
+                            default:
+                                woops();
+                            
+                                break;
+                        }
+                    }
                     break;
                                 
                 default:
-                                //miss type so retry
-                            woops();    
-                            
-                   
+                    woops();
                 break;
                                
                                 
