@@ -18,14 +18,14 @@ var inventory = {
         sword: 0,
         lamp: 0,
         rope: 0,
-        loot: 0
+        loot: 3
     };
 
 var dead = false;
    
 var checkLoot = function () {
         
-    window.alert("This is how much you got" + inventory.loot);
+    window.alert("This is how much you got: " + inventory.loot + " coins.");
 };
 
 function gameEnd() {
@@ -186,7 +186,7 @@ function Game() {
                     //go in hut
                     case "enter":
                     case "e":
-                        var hutSpace = window.prompt ("you go inside the hut and you find an old hag who is quietly mumbling to herself over a book. You notice a sword to the left \n talk with her \n take sword \n leave hut").toLocaleLowerCase();
+                        var hutSpace = window.prompt ("you go inside the hut and you find an old hag who is quietly mumbling to herself over a book. You notice a sword to the left \n take sword \n leave hut").toLocaleLowerCase();
                         //take the sword
                         if(hutSpace === "take sword" || hutSpace === "take" || hutSpace === "t") {
                     
@@ -198,14 +198,15 @@ function Game() {
                                 window.alert ("the Hag hits you before you can run away. I'm sorry but the hag doesn't take lightly people taking her stuff so you've been turned into a newt and put into a jar");
                                 Retry();
                         
-                            } else if (hagAttack === "fight" || hagAttack === "fight") {
+                            } else if (hagAttack === "fight" || hagAttack === "f") {
                             
                                 window.alert ("the hag raises her ladel to hit you but you parry with your sword.");
                                 window.prompt("She falls over being caught off guard. Do you kill her? \n no \n yes");
-                                window.alert("She shreeks as you run her through. It had to be done.");
+                                window.alert("She begins to cast a spell on you, and so you run her through.");
+                                window.alert("It had to be done.");
                                 inventory.sword ++;
                                 window.alert("you exit the hut with the sword in hand");
-                                window.alert("once your out of the hut you gaze around and then look back. The hut is gone");
+                                window.alert("once you're out of the hut you gaze around and then look back. The hut is gone");
                                 hut = false;
                         
                             }    
@@ -224,12 +225,12 @@ function Game() {
                         break;
                 }
             }else{
-                window.alert("You follow the path to the north. along the way you notice an oddly empty part of land. Maybe something used to be here. All well, let's continue down the path").toLocaleLowerCase();
+                window.alert("You follow the path to the north. along the way you notice an oddly empty part of land. Maybe something used to be here. All well, let's continue down the path");
                 Path();
                 
             }
             
-        }if (swampEnv === "s" || swampEnv === "swim"){
+        }if (swampEnv === "s" || swampEnv === "swim") {
             window.alert("you try to swim but an alagator eats you instead");
             gameEnd();
         }
@@ -243,14 +244,20 @@ function Game() {
                 
         var road = window.prompt("the path goes on for a bit but now there is a split \n east \n west").toLocaleLowerCase();
                    
-        if (road === "west" || road === "w"){
+        if (road === "west" || road === "w") {
             window.alert("As you head to the west you spot a castle.");
             var castle = window.prompt("You approach the castle. \n go in \n go east").toLocaleLowerCase();
-            if(castle === "go" || castle === "in" || castle === "go in" || castle === "g"){
+            if(castle === "go" || castle === "in" || castle === "go in" || castle === "i") {
                 window.alert ("It's locked, sucks to suck. looks like we're going east");
+                window.alert("you travel east for a distance the path ends as you come up to a well.");
                 East();
+            } else if (castle === "east" || castle === "e") {
+                Path();
+            } else {
+                Path();
             }
         } else if (road === "east" || road === "e") {
+            window.alert("you travel east for a distance the path ends as you come up to a well.");
             East();
         } else {
             window.alert(woops);
@@ -258,45 +265,52 @@ function Game() {
         }
     }
     function East(){
-                    window.alert("you travel east for a distance the path ends as you come up to a well.");
-                        var well = window.prompt("what do you want to do?\n get water \n look down \n go in \n head west \n make a wish").toLocaleLowerCase();
+        var well = window.prompt("what do you want to do?\n get water \n look down \n go in \n head west \n make a wish").toLocaleLowerCase();
                         switch(well){
                             case "get water":
                             case "water":
                                 window.alert("you lower the bucket and pull it out. You take a long swig of the water of you just collected");
-                                // funtion?
-                                well;
+                                East();
                             break;
+                                
                             case "look down":
-                            case"look":
-                            case"l":
+                            case "look":
+                            case "l":
                                 window.alert("you look down the deep well that seems to never end.");
+                                East();
                                 
                                 break;
                             case "go":
-                            case"go in":
-                            case"g":
+                            case "go in":
+                            case "g":
                                 window.alert("you grab the rope attached to the well and down you go");
                                 window.alert("down, down, down you go. As you decend it starts to get really cold. You begin to freeze, and then the rope breaks");
                                 window.alert("you fall and it becomes so cold you pass out. Then you wake up on warm grass. You're now free");
+                                gameEnd();
                                 
                                 break;
                             case "west":
-                            case"head west":
-                            case"w":
+                            case "head west":
+                            case "w":
                                 Path();
-                                
                                 break;
+                                
                             case "make a wish":
                             case "wish":
-                                var wish = window.prompt("what do you want to wish");
-                                while (!window.confirm("Are you sure you want " + wish + " as your name?")) {
-                                    wish = window.prompt("What would you like?");
+                                if (inventory.loot >= 0){
+                                    var wish = window.prompt("what do you want to wish");
+                                    while (!window.confirm("you look into the well and wish that " + wish + " and then flip a coin into the well")) {
+                                        wish = window.prompt("What would you like?");
+                                    }
+                                } else {
+                                    window.alert("sorry you're out of coins");
                                 }
+                                East();
                                 break;
+                                
                             default:
                                 window.alert(woops);
-                                Path();
+                                East();
                                 break;
                         }
     }
