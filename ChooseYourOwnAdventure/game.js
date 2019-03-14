@@ -12,6 +12,9 @@
 //window.prompt("what type of pokemon do you like?");
 
 /*global window*/
+/* eslint-env es6 */
+const wizName = ["jimmy", "dolf", "brian", "theo"];
+
 var hut = true;
 var woops = ("I didn't understand. would you repeat?");
 var inventory = {
@@ -45,7 +48,7 @@ function Retry() {
     }
         
 }
-var wizName = ["jimmy", "dolf", "brian", "theo"];
+
 window.alert("legend of " + wizName[Math.floor(Math.random() * 4)] + "!");
 
 window.alert("before we start we need to check your alive");
@@ -72,7 +75,10 @@ function Game() {
                                 
 
     window.alert("Welcome to the land of lollypop " + playerName);
-    Prison();
+    playerName = "Sir Licksalot";
+    window.alert("on second thought I like a different name. Your name is now " + playerName);
+    window.alert("Welcome to the land of lollypop " + playerName + ". ;)");
+    Prison();  
     
     function tunnels() {
        
@@ -80,10 +86,9 @@ function Game() {
      // the tunnel system begins
         
         if (enterTunnel === "yes" || enterTunnel === "y") {
-            var i = 0;
-            while (i < 5) {
+            let i;
+            for (i = 0; i < 5; i++ ) {
                 window.prompt("It apears to be a maze with tunnels in all directions. Which way do you want to go? \n north \n east \n south \n west ");
-                i++;
             }
             
             Swamp();
@@ -120,30 +125,25 @@ function Game() {
             }
             
             if (prisonLook === "lock" || prisonLook === "pick" || prisonLook === "pick lock" || prisonLook === "p") {
-                window.alert ("The lock quickly opens with a loud clang. A guard comes running in");
-                var fight = window.prompt("do you want to fight? \n no \n yes").toLocaleLowerCase();
+                    window.alert ("The lock quickly opens with a loud clang. A guard comes running in");
+                    var fight = window.prompt("do you want to fight? \n no \n yes").toLocaleLowerCase();
             
-           
-                if (fight === "y" || fight === "yes") {
                 
-                var fighting = Math.random () * 2 ;
-                
-                
-                    if (fighting === 1){
+                    if (fight === "y" || fight === "yes") {
+                        var fighting = Math.random () * 2 ;
+                        
+                        if (fighting === 1){
                         window.alert("you fought hard but the guard killed you");
                         dead = true;
                         Retry();
-                    
-                
-                    } else {
-                        window.alert("you're able to over power the guard and you're free!");
-                        Swamp();
-                    }
-                    
+                        } else {
+                            window.alert("you're able to over power the guard and you're free!");
+                            Swamp();
+                        }
+                        
                 } else {
                     window.alert(" the guard quickly knocks you out");
                     Prison();
-                
                 }
             } else {
             window.alert(woops);
