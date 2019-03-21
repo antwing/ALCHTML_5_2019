@@ -40,6 +40,39 @@
                 left: 50px;
                 top: 300px;
             }
+            div#triangle-up{
+                width: 0;
+                height: 0;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-bottom: 100px solid red;
+                position: absolute;
+                left: 600px;
+                top: 400px;
+            }
+            div#triangle-left{
+                width: 0;
+                height: 0;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-bottom: 100px solid seagreen;
+                position: absolute;
+                left: 700px;
+                top: 400px;
+                z-index: 0;
+            }
+            img#LegoBat{
+                display: block;
+                width: auto;
+                height: auto;
+                z-index: 1;
+                border: outset 5px red;
+                position: absolute;
+                left: 250px;
+                border-radius: 15%;
+                box-shadow: 5px 5px 10px maroon;
+                z-index: 0;
+            }
         </style>
     </head>
     <body>
@@ -47,6 +80,9 @@
          <h3>the time to eat cake has come!</h3>
         <div id="box"></div>
         <div id="circle"></div>
+        <div id="triangle-up"></div>
+        <div id="triangle-left"></div>
+        <img src="legoBatman.jpg" id="LegoBat">
 
     </body>
 </html>
