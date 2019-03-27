@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <canvas id="myCanvas" width="700" height="700" style="border:1px dotted #000000">
+        </canvas>
+        <script>
+            //setup Canvas
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            //draw rect
+            ctx.fillStyle = "red";
+            ctx.fillRect(250,500,150,200);
+            //draw line
+            ctx.moveTo(200,200);
+            ctx.lineTo(300,300);
+            ctx.stroke();
+            //draw circle
+            ctx.beginPath();
+            ctx.arc(120,500,100,0,2* Math.PI);
+            ctx.stroke();
+            //create gradient
+            var grd = ctx.createLinearGradient(0,0,200,0);
+            grd.addColorStop(0,"red");
+            grd.addColorStop(1,"white");
+            // Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(10,10,150,80);
+            // reverse venyet
+            var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+            grd.addColorStop(0,"blue");
+            grd.addColorStop(1, "white");
+            //Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(200, 10, 150, 80)
+        </script>
+    </body>
+</html>
