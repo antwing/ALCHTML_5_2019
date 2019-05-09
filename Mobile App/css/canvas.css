@@ -14,13 +14,12 @@ body
 div#container
 {
     width: 100%;
-
     border: 3px dashed orange;
     background-color: blueviolet;
 }
 header
 {
-    width: 91.7%;
+    width: 94.2%;
     padding: 50px;
     background-color: antiquewhite;
 }
@@ -72,9 +71,9 @@ nav ul li a:hover
 */
 
 .icon bar{
-    position: absolute;
+    position: sticky;
     bottom: 0;
-    /*left: 0;*/
+    left: 0;
     width: 100%;
     background-color: aqua;
     overflow: auto;
@@ -123,5 +122,27 @@ div.keepOpen
         text-align: center;
     }
 }
-
 */
+
+div# product_grp{
+    width:auto;
+    margin:auto;
+}
+
+figure.product{
+    width:20%;
+    background-color: cadetblue;
+}
+
+figure.product img{
+    display: block;
+    width:auto;
+    margin:auto;
+}
+
+figure.product figcaption{
+    text-align: center;
+    color: black;
+    font-family: fantasy;
+    font-size: 24px;
+}
