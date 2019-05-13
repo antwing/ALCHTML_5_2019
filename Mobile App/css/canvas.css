@@ -19,7 +19,7 @@ div#container
 }
 header
 {
-    width: 94.2%;
+    width: auto;
     padding: 50px;
     background-color: antiquewhite;
 }
@@ -38,7 +38,12 @@ header h1
 div#content
 {
     width:100;
+    height: auto;
     background-color: wheat;
+}
+
+div#content h3{
+    text-align: center;
 }
 /*
 nav
@@ -71,7 +76,7 @@ nav ul li a:hover
 */
 
 .icon bar{
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -93,7 +98,7 @@ nav ul li a:hover
     background-color: aliceblue;
 }
 .active {
-    background-color: saddlebrown;
+    background-color: mediumaquamarine;
 }
 
 /*
@@ -125,24 +130,50 @@ div.keepOpen
 */
 
 div# product_grp{
-    width:auto;
-    margin:auto;
+    max-width: 60%;
+    min-width: 20%;
+    margin: auto;
 }
 
 figure.product{
-    width:20%;
+    display: block;
+    float: left;
+    margin: 10px 15px;
+    max-width: 45%;
+    min-width: 30%;
     background-color: cadetblue;
+    border-radius: 5%;
 }
 
 figure.product img{
     display: block;
-    width:auto;
+    padding: 10px 0;
+    width:80%;
     margin:auto;
 }
 
 figure.product figcaption{
     text-align: center;
-    color: black;
+    color: white;
     font-family: fantasy;
     font-size: 24px;
+}
+dive.keepOpen{
+    clear: both;
+}
+@media screen and (max-width: 600px){
+    figure.product{
+        float: none;
+        margin: 10px auto;
+        min-width: 50%;
+        max-width: 100%;
+        background-color: aquamarine;
+        border-radius: 5%;
+    }
+    figure.product figcaption{
+        text-align: center;
+        color: white;
+        font-family: fantasy;
+        font-size: 12px;
+    }
 }
