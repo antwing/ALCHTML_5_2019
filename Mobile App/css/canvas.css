@@ -14,8 +14,8 @@ body
 div#container
 {
     width: 100%;
-    border: 3px dashed orange;
-    background-color: blueviolet;
+    border: 3px dashed darkred;
+    background-color: darkgoldenrod;
 }
 header
 {
@@ -31,15 +31,18 @@ Header img#applogo{
 }
 header h1
 {
-    color: darkblue;
-    font-family: 'Muli', sans-serif;
-    font-size: 2.5em;
+    color: darkred;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 3.5em;
+    font-size: 3.5em;
+    font-style: bold;
+    text-align: center;
 }
 div#content
 {
     width:100;
     height: auto;
-    background-color: wheat;
+    background-color: paleturquoise;
 }
 
 div#content h3{
@@ -75,30 +78,30 @@ nav ul li a:hover
 }
 */
 
-.icon bar{
+.icon-bar{
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: aqua;
+    background-color: bisque;
     overflow: auto;
 }
 
-.icon bar a{
+.icon-bar a{
     float: left;
     width 20%;
     text-align: center;
-    padding 12px 0;
+    padding: 5px 10px;
     transition: all 0.3s ease;
-    color: whitesmoke;
-    font-size: 36px;
+    color: darkred;
+    font-size: 40px;
 }
 
 .icon-bar a:hover{
     background-color: aliceblue;
 }
 .active {
-    background-color: mediumaquamarine;
+    background-color: paleturquoise;
 }
 
 /*
@@ -141,7 +144,7 @@ figure.product{
     margin: 10px 15px;
     max-width: 45%;
     min-width: 30%;
-    background-color: cadetblue;
+    background-color:antiquewhite;
     border-radius: 5%;
 }
 
@@ -154,9 +157,17 @@ figure.product img{
 
 figure.product figcaption{
     text-align: center;
-    color: white;
+    color: black;
     font-family: fantasy;
     font-size: 24px;
+}
+
+legend, span, input, textarea{
+    display:block;
+    margin:auto;
+    text-align: center;
+    font-family: sans-serif;
+    color:aqua;
 }
 dive.keepOpen{
     clear: both;
