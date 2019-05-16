@@ -28,6 +28,7 @@ Header img#applogo{
     display: block;
     margin:auto;
     width: 100px;
+    border-radius: 100%
 }
 header h1
 {
@@ -94,7 +95,7 @@ nav ul li a:hover
     padding: 5px 10px;
     transition: all 0.3s ease;
     color: darkred;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .icon-bar a:hover{
@@ -167,7 +168,7 @@ legend, span, input, textarea{
     margin:auto;
     text-align: center;
     font-family: sans-serif;
-    color:aqua;
+    color:black;
 }
 dive.keepOpen{
     clear: both;
