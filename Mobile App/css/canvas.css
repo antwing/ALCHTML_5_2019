@@ -173,18 +173,17 @@ legend, span, input, textarea{
 dive.keepOpen{
     clear: both;
 }
-@media screen and (max-width: 600px){
+@media screen and {
     figure.product{
         float: none;
         margin: 10px auto;
         min-width: 50%;
         max-width: 100%;
-        background-color: aquamarine;
         border-radius: 5%;
     }
     figure.product figcaption{
         text-align: center;
-        color: white;
+        color: black;
         font-family: fantasy;
         font-size: 12px;
     }
